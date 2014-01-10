@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TPApp"> <!-- Set this to the main language of your site -->
+<head>
+    <meta charset="utf-8">
+
+    <title>HTML5 Bones :: PAGE TITLE</title>
+
+    <!-- Enter a brief description of your page -->
+    <meta name="description" content="">
+
+    <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Add normalize.css which enables browsers to render all elements more consistently and in line with modern standards as it only targets particular styles that need normalizing -->
+    <link href="src/css/normalize.css" rel="stylesheet" media="all">
+    <link href="src/css/base.css" rel="stylesheet" media="all">
+    <link href="src/css/icons.css" rel="stylesheet" media="all">
+
+</head>
+<body data-ng-controller="MainCtrl">
+
+<div class="form">
+   <fieldset>
+       <legend>Header colors</legend>
+       <p>
+           <label for="header-bg">Header Background</label>
+           <input type="color" data-ng-model="header.background" placeholder="{{ header.background }}" name="header-bg" id="header-bg"/>
+       </p>
+       <p>
+           <label for="header-color">Header color</label>
+           <input type="color" data-ng-model="header.color" placeholder="{{ header.color }}" name="header-color" id="header-color"/>
+       </p>
+       <p>
+           <label for="header-height">Header height</label>
+           <input type="text" data-ng-model="header.height" placeholder="{{ header.height }}" value="{{ header.height }}" name="header-height" id="header-height"/>
+       </p>
+       <p>
+           <label for="header-fontSize">Header font size</label>
+           <input type="text" data-ng-model="header.fontSize" placeholder="{{ header.fontSize }}" value="{{ header.fontSize }}" name="header-fontSize" id="header-fontSize"/>
+       </p>
+   </fieldset>
+</div>
+
+<div class="preview">
+    <div class="preview-header" data-ng-style="header">
+        <h1>Preview app</h1>
+    </div>
+</div>
+
+<script src="src/js/vendor/angular.js"></script>
+<script src="src/js/vendor/angular-resource.js"></script>
+<script src="src/js/vendor/angular-sanitize.js"></script>
+
+<script src="src/js/app.js"></script>
+</body>
+</html>
